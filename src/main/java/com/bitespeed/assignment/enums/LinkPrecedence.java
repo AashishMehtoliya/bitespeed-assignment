@@ -1,4 +1,4 @@
-package com.bitespeed.assignment;
+package com.bitespeed.assignment.enums;
 
 public enum LinkPrecedence {
     PRIMARY("primary"),

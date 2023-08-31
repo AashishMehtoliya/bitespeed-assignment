@@ -1,6 +1,6 @@
 package com.bitespeed.assignment.services;
 
-import com.bitespeed.assignment.LinkPrecedence;
+import com.bitespeed.assignment.enums.LinkPrecedence;
 import com.bitespeed.assignment.dao.IdentityRepository;
 import com.bitespeed.assignment.dto.ContactDto;
 import com.bitespeed.assignment.dto.IdentityDto;
@@ -41,10 +41,7 @@ public class IdentityService {
             List<Contact> listOfIdentityFromPhone = identityRepository.findByPhoneNumber(String.valueOf(phone));
             primaryId = processIdentityList(listOfIdentityFromPhone, toSave);
         } else {
-            toSave.setLinkedId(null);
-            toSave.setLinkPrecedence(LinkPrecedence.PRIMARY.getName());
-            toSave = identityRepository.save(toSave);
-            primaryId = toSave.getId();
+            throw new IllegalArgumentException("Email or Phone number is required");
         }
 
         return createReturnIdentityDto(primaryId);
