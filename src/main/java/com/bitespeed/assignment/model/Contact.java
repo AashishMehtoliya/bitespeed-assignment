@@ -5,17 +5,18 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Timestamp;
+import java.util.Optional;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "identity")
+@Table(name = "contact")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ToString
-public class Identity {
+public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +30,7 @@ public class Identity {
     private String email;
 
     @Column(name = "linked_id")
-    private int linkedId;
+    private Integer linkedId;
 
     @Column(name = "link_precedence")
     private String linkPrecedence;

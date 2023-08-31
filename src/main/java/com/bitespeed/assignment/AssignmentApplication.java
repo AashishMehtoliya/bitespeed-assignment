@@ -12,7 +12,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @Configuration
-@EnableSwagger2
 @EntityScan({"com.bitespeed"})
 @ComponentScan({"com.bitespeed"})
 @EnableJpaRepositories({"com.bitespeed"})

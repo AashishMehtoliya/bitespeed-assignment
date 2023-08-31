@@ -1,5 +1,6 @@
 package com.bitespeed.assignment.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 @Data
@@ -7,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class IdentityRequestDto {
 
     private String email;
